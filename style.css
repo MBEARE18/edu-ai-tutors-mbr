@@ -626,3 +626,333 @@ h3,
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 600px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Circular Features Section */
+.features-circular-section {
+    padding: 30px 0;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.features-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Left Content */
+.features-left-content {
+    padding-right: 20px;
+}
+
+.features-tagline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.tagline-bar {
+    width: 50px;
+    height: 4px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.features-tagline p {
+    color: #666;
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0;
+}
+
+.features-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.features-main-title .features-text {
+    color: #003366;
+}
+
+.features-main-title .brand-text {
+    color: var(--primary-orange);
+}
+
+.features-description {
+    color: #444;
+    line-height: 1.8;
+}
+
+.features-description p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.features-description strong {
+    color: #003366;
+    font-weight: 700;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, var(--primary-orange) 0%, #e68a00 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+    margin-top: 10px;
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+}
+
+/* Right Content - Circular Diagram */
+.features-right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curriculum-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.curriculum-title .highlight-text {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 2rem;
+}
+
+.circular-features-wrapper {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    overflow: visible;
+}
+
+.center-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 136, 204, 0.3);
+    z-index: 1;
+}
+
+.description-content {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.description-content h4 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.description-content p {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+.feature-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 2.5px solid #e8f4ff;
+    z-index: 2;
+}
+
+.feature-circle:hover {
+    transform: scale(1.15);
+    box-shadow: 0 15px 40px rgba(255, 153, 0, 0.3);
+    border-color: var(--primary-orange);
+    background: linear-gradient(135deg, #ffffff 0%, #fff5e6 100%);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.feature-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #003366;
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 4px;
+}
+
+/* Position each circle around the center */
+.feature-circle[data-position="top"] {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.feature-circle[data-position="top-right"] {
+    top: 8%;
+    right: 8%;
+}
+
+.feature-circle[data-position="right"] {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.feature-circle[data-position="bottom-right"] {
+    bottom: 8%;
+    right: 8%;
+}
+
+.feature-circle[data-position="bottom"] {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.feature-circle[data-position="bottom-left"] {
+    bottom: 8%;
+    left: 8%;
+}
+
+.feature-circle[data-position="top-left"] {
+    top: 8%;
+    left: 8%;
+}
+
+.feature-circle[data-position="left"] {
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+}
+
+/* Responsive for circular features */
+@media (max-width: 1024px) {
+    .features-two-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .features-left-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .features-tagline {
+        justify-content: center;
+    }
+
+    .features-main-title {
+        font-size: 2rem;
+    }
+
+    .circular-features-wrapper {
+        width: 450px;
+        height: 450px;
+    }
+
+    .center-description {
+        width: 200px;
+        height: 200px;
+    }
+
+    .feature-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .feature-icon {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-main-title {
+        font-size: 1.7rem;
+    }
+
+    .circular-features-wrapper {
+        width: 380px;
+        height: 380px;
+    }
+
+    .center-description {
+        width: 170px;
+        height: 170px;
+    }
+
+    .description-content {
+        padding: 15px;
+    }
+
+    .description-content h4 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .description-content p {
+        font-size: 0.7rem;
+    }
+
+    .feature-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .feature-icon {
+        font-size: 1.3rem;
+        margin-bottom: 3px;
+    }
+
+    .feature-label {
+        font-size: 0.55rem;
+    }
+}
