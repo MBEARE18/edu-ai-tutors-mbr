@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     registerLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+<<<<<<< HEAD
             const linkText = link.textContent.toLowerCase();
 
             if (linkText.includes('register') || linkText.includes('student')) {
@@ -35,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (linkText.includes('sign in')) {
                 const loginTab = document.querySelector('[data-tab="login"]');
                 if (loginTab) loginTab.click();
+=======
+            const registerTab = document.querySelector('[data-tab="register"]');
+            if (registerTab) {
+                registerTab.click();
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
             }
         });
     });
@@ -48,11 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailHint = document.getElementById('email-hint');
 
             if (e.target.value === 'parent') {
+<<<<<<< HEAD
+=======
+                // Change to User ID for Parent
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
                 emailLabel.textContent = 'User ID';
                 emailInput.placeholder = 'PAR12345678';
                 emailInput.type = 'text';
                 emailHint.style.display = 'block';
             } else {
+<<<<<<< HEAD
+=======
+                // Change to Email Address for User
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
                 emailLabel.textContent = 'Email Address';
                 emailInput.placeholder = 'your@email.com';
                 emailInput.type = 'text';
@@ -83,6 +97,11 @@ function handleLogin(form) {
     const rememberMe = form.querySelector('#remember-me').checked;
 
     console.log('Login attempt:', { email, rememberMe });
+<<<<<<< HEAD
+=======
+
+    // Add your login logic here
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
     alert('Login functionality will be implemented here!');
 }
 
@@ -91,12 +110,29 @@ function handleRegister(form) {
     const email = form.querySelector('#register-email').value;
     const password = form.querySelector('#register-password').value;
     const confirmPassword = form.querySelector('#register-confirm-password').value;
+<<<<<<< HEAD
+=======
+    const termsAccepted = form.querySelector('#terms').checked;
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
 
     if (password !== confirmPassword) {
         alert('Passwords do not match!');
         return;
     }
 
+<<<<<<< HEAD
     console.log('Register attempt:', { name, email });
     alert('Registration functionality will be implemented here!');
 }
+=======
+    if (!termsAccepted) {
+        alert('Please accept the Terms & Conditions');
+        return;
+    }
+
+    console.log('Register attempt:', { name, email });
+
+    // Add your registration logic here
+    alert('Registration functionality will be implemented here!');
+}
+>>>>>>> 60771c50795efe4046d1257650967e4b52b9a3a2
