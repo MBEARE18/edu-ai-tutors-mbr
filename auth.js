@@ -61,6 +61,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // State to City Mapping
+    const stateCityMap = {
+        'andhra-pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool', 'Other'],
+        'karnataka': ['Bangalore', 'Mysore', 'Hubli', 'Mangalore', 'Belgaum', 'Other'],
+        'kerala': ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Thrissur', 'Kollam', 'Other'],
+        'tamil-nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem', 'Other'],
+        'telangana': ['Hyderabad', 'Warangal', 'Nizamabad', 'Karimnagar', 'Khammam', 'Other'],
+        'maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Aurangabad', 'Other'],
+        'delhi': ['New Delhi', 'North Delhi', 'South Delhi', 'East Delhi', 'West Delhi', 'Other'],
+        'other': ['Other']
+    };
+
+    // Handle State Selection
+    const stateSelect = document.getElementById('register-state');
+    const citySelect = document.getElementById('register-city');
+
+    if (stateSelect && citySelect) {
+        stateSelect.addEventListener('change', function () {
+            const selectedState = this.value;
+
+            // Clear current options
+            citySelect.innerHTML = '<option value="">Select City</option>';
+
+            if (selectedState && stateCityMap[selectedState]) {
+                // Enable and populate
+                citySelect.disabled = false;
+                stateCityMap[selectedState].forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+            } else {
+                // Disable if no state selected
+                citySelect.disabled = true;
+                citySelect.innerHTML = '<option value="">Select State first</option>';
+            }
+        });
+    }
+
     // Handle form submissions
     const authForms = document.querySelectorAll('.auth-form');
     authForms.forEach(form => {
@@ -97,6 +137,7 @@ function handleRegister(form) {
         return;
     }
 
+    // Basic Validation passed
     console.log('Register attempt:', { name, email });
     alert('Registration functionality will be implemented here!');
 }

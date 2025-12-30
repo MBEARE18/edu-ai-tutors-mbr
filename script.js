@@ -52,4 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'all 0.6s ease-out';
         observer.observe(card);
     });
+
+    // Circular features hover interaction
+    const featureCircles = document.querySelectorAll('.feature-circle');
+    const featureTitle = document.getElementById('feature-title');
+    const featureDescription = document.getElementById('feature-description');
+
+    featureCircles.forEach(circle => {
+        circle.addEventListener('mouseenter', () => {
+            const title = circle.getAttribute('data-title');
+            const desc = circle.getAttribute('data-desc');
+
+            if (featureTitle && featureDescription) {
+                featureTitle.textContent = title;
+                featureDescription.textContent = desc;
+            }
+        });
+
+        circle.addEventListener('mouseleave', () => {
+            if (featureTitle && featureDescription) {
+                featureTitle.textContent = 'Explore Our Features';
+                featureDescription.textContent = 'Hover over any feature to learn more';
+            }
+        });
+    });
 });

@@ -236,7 +236,9 @@
     .package-title {
         font-size: 1.3rem;
     }
-}/* ============================= */
+}
+
+/* ============================= */
 /* Competitive Exams Section */
 /* ============================= */
 
@@ -312,4 +314,3 @@
     visibility: visible;
     transform: translateY(0);
 }
-
